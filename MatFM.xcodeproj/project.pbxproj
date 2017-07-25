@@ -30,6 +30,14 @@
 		E5A006451F27967900D6C950 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E596FE881F278FB2000675EC /* SwiftyJSON.framework */; };
 		E5A006491F27990400D6C950 /* NETImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006481F27990400D6C950 /* NETImageRequester.swift */; };
 		E5A0064B1F27995900D6C950 /* NETImageRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0064A1F27995900D6C950 /* NETImageRequesterTests.swift */; };
+		E5A0064D1F27A1A700D6C950 /* MUSTracksQueryServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0064C1F27A1A700D6C950 /* MUSTracksQueryServiceProtocol.swift */; };
+		E5A006501F27A2DE00D6C950 /* MUSLastFMTracksQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0064F1F27A2DE00D6C950 /* MUSLastFMTracksQueryService.swift */; };
+		E5A006521F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006511F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift */; };
+		E5A006541F27A3ED00D6C950 /* NETStubJSONRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006531F27A3ED00D6C950 /* NETStubJSONRequester.swift */; };
+		E5A006561F27A5EB00D6C950 /* MUSTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006551F27A5EB00D6C950 /* MUSTrack.swift */; };
+		E5A006581F27AA6F00D6C950 /* MUSQueryServiceProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006571F27AA6F00D6C950 /* MUSQueryServiceProviders.swift */; };
+		E5A0065A1F27B61500D6C950 /* validLastFMTracksListExample.json in Resources */ = {isa = PBXBuildFile; fileRef = E5A006591F27B61500D6C950 /* validLastFMTracksListExample.json */; };
+		E5A0065C1F27B84200D6C950 /* MUSTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +90,14 @@
 		E5A006421F2793F600D6C950 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		E5A006481F27990400D6C950 /* NETImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETImageRequester.swift; sourceTree = "<group>"; };
 		E5A0064A1F27995900D6C950 /* NETImageRequesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETImageRequesterTests.swift; sourceTree = "<group>"; };
+		E5A0064C1F27A1A700D6C950 /* MUSTracksQueryServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSTracksQueryServiceProtocol.swift; sourceTree = "<group>"; };
+		E5A0064F1F27A2DE00D6C950 /* MUSLastFMTracksQueryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSLastFMTracksQueryService.swift; sourceTree = "<group>"; };
+		E5A006511F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSLastFMTracksQueryServiceTests.swift; sourceTree = "<group>"; };
+		E5A006531F27A3ED00D6C950 /* NETStubJSONRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubJSONRequester.swift; sourceTree = "<group>"; };
+		E5A006551F27A5EB00D6C950 /* MUSTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSTrack.swift; sourceTree = "<group>"; };
+		E5A006571F27AA6F00D6C950 /* MUSQueryServiceProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSQueryServiceProviders.swift; sourceTree = "<group>"; };
+		E5A006591F27B61500D6C950 /* validLastFMTracksListExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validLastFMTracksListExample.json; sourceTree = "<group>"; };
+		E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSTrackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +147,7 @@
 				E596FE541F2775CF000675EC /* Assets.xcassets */,
 				E596FE561F2775CF000675EC /* LaunchScreen.storyboard */,
 				E596FE591F2775CF000675EC /* Info.plist */,
+				E5A0064E1F27A1AC00D6C950 /* MusicService */,
 				E596FE7A1F277A03000675EC /* Networking */,
 				E596FE6F1F277685000675EC /* Utility */,
 				E596FE871F278FB2000675EC /* ThirdParty */,
@@ -160,6 +177,8 @@
 		E596FE741F2778AA000675EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */,
+				E5A006511F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift */,
 				E596FE7D1F277D82000675EC /* NETRequesterTests.swift */,
 				E5A0063E1F2790D200D6C950 /* NETJSONRequesterTests.swift */,
 				E5A0064A1F27995900D6C950 /* NETImageRequesterTests.swift */,
@@ -171,6 +190,7 @@
 		E596FE751F2778B2000675EC /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				E5A006531F27A3ED00D6C950 /* NETStubJSONRequester.swift */,
 				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
 				E5A006401F27918D00D6C950 /* NETStubRequester.swift */,
 				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
@@ -202,9 +222,21 @@
 		E5A006441F27942600D6C950 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				E5A006591F27B61500D6C950 /* validLastFMTracksListExample.json */,
 				E5A006421F2793F600D6C950 /* TestHelpers.swift */,
 			);
 			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		E5A0064E1F27A1AC00D6C950 /* MusicService */ = {
+			isa = PBXGroup;
+			children = (
+				E5A006551F27A5EB00D6C950 /* MUSTrack.swift */,
+				E5A0064C1F27A1A700D6C950 /* MUSTracksQueryServiceProtocol.swift */,
+				E5A0064F1F27A2DE00D6C950 /* MUSLastFMTracksQueryService.swift */,
+				E5A006571F27AA6F00D6C950 /* MUSQueryServiceProviders.swift */,
+			);
+			name = MusicService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A0065A1F27B61500D6C950 /* validLastFMTracksListExample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,13 +348,17 @@
 			files = (
 				E596FE501F2775CF000675EC /* ViewController.swift in Sources */,
 				E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */,
+				E5A0064D1F27A1A700D6C950 /* MUSTracksQueryServiceProtocol.swift in Sources */,
 				E596FE861F278DCE000675EC /* NETJSONRequester.swift in Sources */,
 				E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */,
+				E5A006581F27AA6F00D6C950 /* MUSQueryServiceProviders.swift in Sources */,
 				E596FE791F2779FF000675EC /* NETResult.swift in Sources */,
 				E596FE841F2785A2000675EC /* NETError.swift in Sources */,
 				E596FE801F277F7F000675EC /* NETURLSessionProtocol.swift in Sources */,
+				E5A006501F27A2DE00D6C950 /* MUSLastFMTracksQueryService.swift in Sources */,
 				E596FE7C1F277AE7000675EC /* NETRequester.swift in Sources */,
 				E5A006491F27990400D6C950 /* NETImageRequester.swift in Sources */,
+				E5A006561F27A5EB00D6C950 /* MUSTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,12 +366,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A0065C1F27B84200D6C950 /* MUSTrackTests.swift in Sources */,
+				E5A006541F27A3ED00D6C950 /* NETStubJSONRequester.swift in Sources */,
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
 				E5A006431F2793F600D6C950 /* TestHelpers.swift in Sources */,
 				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
 				E5A0064B1F27995900D6C950 /* NETImageRequesterTests.swift in Sources */,
 				E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */,
+				E5A006521F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift in Sources */,
 				E5A006411F27918D00D6C950 /* NETStubRequester.swift in Sources */,
 				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
 			);
