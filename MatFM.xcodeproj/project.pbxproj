@@ -21,6 +21,8 @@
 		E596FE801F277F7F000675EC /* NETURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */; };
 		E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE811F27800D000675EC /* NETStubURLSession.swift */; };
 		E596FE841F2785A2000675EC /* NETError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE831F2785A2000675EC /* NETError.swift */; };
+		E596FE8A1F278FD3000675EC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E596FE881F278FB2000675EC /* SwiftyJSON.framework */; };
+		E596FE8B1F278FD3000675EC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E596FE881F278FB2000675EC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,20 @@
 			remoteInfo = MatFM;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E596FE8C1F278FD3000675EC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E596FE8B1F278FD3000675EC /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E596FE4A1F2775CF000675EC /* MatFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +68,7 @@
 		E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETURLSessionProtocol.swift; sourceTree = "<group>"; };
 		E596FE811F27800D000675EC /* NETStubURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubURLSession.swift; sourceTree = "<group>"; };
 		E596FE831F2785A2000675EC /* NETError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETError.swift; sourceTree = "<group>"; };
+		E596FE881F278FB2000675EC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E596FE8A1F278FD3000675EC /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +119,7 @@
 				E596FE591F2775CF000675EC /* Info.plist */,
 				E596FE7A1F277A03000675EC /* Networking */,
 				E596FE6F1F277685000675EC /* Utility */,
+				E596FE871F278FB2000675EC /* ThirdParty */,
 			);
 			path = MatFM;
 			sourceTree = "<group>";
@@ -152,6 +171,14 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		E596FE871F278FB2000675EC /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				E596FE881F278FB2000675EC /* SwiftyJSON.framework */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +189,7 @@
 				E596FE461F2775CF000675EC /* Sources */,
 				E596FE471F2775CF000675EC /* Frameworks */,
 				E596FE481F2775CF000675EC /* Resources */,
+				E596FE8C1F278FD3000675EC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +436,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EUPRJDEKWL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MatFM/ThirdParty",
+				);
 				INFOPLIST_FILE = MatFM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.easyfutureltd.MatFM;
@@ -421,6 +453,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EUPRJDEKWL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MatFM/ThirdParty",
+				);
 				INFOPLIST_FILE = MatFM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.easyfutureltd.MatFM;
@@ -478,6 +514,7 @@
 				E596FE691F2775CF000675EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E596FE6A1F2775CF000675EC /* Build configuration list for PBXNativeTarget "MatFMTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +523,7 @@
 				E596FE6C1F2775CF000675EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

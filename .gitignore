@@ -1,6 +1,4 @@
 
-# Created by https://www.gitignore.io/api/xcode
-
 ### Xcode ###
 # Xcode
 #
@@ -33,4 +31,4 @@ xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
-# End of https://www.gitignore.io/api/xcode
+Carthage
