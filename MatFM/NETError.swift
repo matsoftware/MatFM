@@ -11,6 +11,7 @@ import Foundation
 /// Predefined common Networking errors
 enum NETError: Error {
     
+    case invalidFormat
     case invalidResponse
     case noData
     

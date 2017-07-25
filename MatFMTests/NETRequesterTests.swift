@@ -87,7 +87,7 @@ class NETRequesterTests: XCTestCase {
     func test_request_sessionDataTaskReturnsAValidResponse_validData_shouldPerformCompletionBlockWithExpectedResult() {
         
         stubSession.mockURLResponse = HTTPURLResponse(url: testURL, statusCode: 200, httpVersion: nil, headerFields: nil)
-        stubSession.mockCompletionData = Data(base64Encoded: "SGlyZSBtZSA6KQ==")
+        stubSession.mockCompletionData = simpleData
         
         var dataReturned: Data?
         requester.request(url: testURL) { (result) in
@@ -111,15 +111,6 @@ class NETRequesterTests: XCTestCase {
         XCTAssertTrue(stubSession.mockURLSessionDataTask.cancelCalled)
         XCTAssertTrue(stubSession.mockURLSessionDataTask.resumeCalled)
         
-    }
-    
-}
-
-// MARK: Helpers
-fileprivate extension NETRequesterTests {
-    
-    var testURL: URL {
-        return URL(string: "https://www.lloydsbank.com/")!
     }
     
 }

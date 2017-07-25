@@ -22,6 +22,11 @@ final class NETRequester: NETRequesting {
     
     private var dataTask: URLSessionDataTask?
     
+    convenience init() {
+        self.init(dispatcher: UTLMainQueueDispatcher(),
+                  session: URLSession(configuration: .default))
+    }
+    
     init(dispatcher: UTLMainQueueDispatching,
          session: NETURLSessionProtocol) {
         self.dispatcher = dispatcher

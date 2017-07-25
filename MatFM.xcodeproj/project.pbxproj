@@ -21,8 +21,13 @@
 		E596FE801F277F7F000675EC /* NETURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */; };
 		E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE811F27800D000675EC /* NETStubURLSession.swift */; };
 		E596FE841F2785A2000675EC /* NETError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE831F2785A2000675EC /* NETError.swift */; };
+		E596FE861F278DCE000675EC /* NETJSONRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE851F278DCE000675EC /* NETJSONRequester.swift */; };
 		E596FE8A1F278FD3000675EC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E596FE881F278FB2000675EC /* SwiftyJSON.framework */; };
 		E596FE8B1F278FD3000675EC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E596FE881F278FB2000675EC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0063E1F2790D200D6C950 /* NETJSONRequesterTests.swift */; };
+		E5A006411F27918D00D6C950 /* NETStubRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006401F27918D00D6C950 /* NETStubRequester.swift */; };
+		E5A006431F2793F600D6C950 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006421F2793F600D6C950 /* TestHelpers.swift */; };
+		E5A006451F27967900D6C950 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E596FE881F278FB2000675EC /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +73,11 @@
 		E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETURLSessionProtocol.swift; sourceTree = "<group>"; };
 		E596FE811F27800D000675EC /* NETStubURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubURLSession.swift; sourceTree = "<group>"; };
 		E596FE831F2785A2000675EC /* NETError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETError.swift; sourceTree = "<group>"; };
+		E596FE851F278DCE000675EC /* NETJSONRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETJSONRequester.swift; sourceTree = "<group>"; };
 		E596FE881F278FB2000675EC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
+		E5A0063E1F2790D200D6C950 /* NETJSONRequesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETJSONRequesterTests.swift; sourceTree = "<group>"; };
+		E5A006401F27918D00D6C950 /* NETStubRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubRequester.swift; sourceTree = "<group>"; };
+		E5A006421F2793F600D6C950 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A006451F27967900D6C950 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +137,7 @@
 		E596FE611F2775CF000675EC /* MatFMTests */ = {
 			isa = PBXGroup;
 			children = (
+				E5A006441F27942600D6C950 /* Supporting files */,
 				E596FE751F2778B2000675EC /* Stubs */,
 				E596FE741F2778AA000675EC /* Tests */,
 				E596FE641F2775CF000675EC /* Info.plist */,
@@ -146,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E596FE7D1F277D82000675EC /* NETRequesterTests.swift */,
+				E5A0063E1F2790D200D6C950 /* NETJSONRequesterTests.swift */,
 				E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */,
 			);
 			name = Tests;
@@ -155,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
+				E5A006401F27918D00D6C950 /* NETStubRequester.swift */,
 				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
 			);
 			name = Stubs;
@@ -166,6 +179,7 @@
 				E596FE831F2785A2000675EC /* NETError.swift */,
 				E596FE781F2779FF000675EC /* NETResult.swift */,
 				E596FE7B1F277AE7000675EC /* NETRequester.swift */,
+				E596FE851F278DCE000675EC /* NETJSONRequester.swift */,
 				E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */,
 			);
 			name = Networking;
@@ -177,6 +191,14 @@
 				E596FE881F278FB2000675EC /* SwiftyJSON.framework */,
 			);
 			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		E5A006441F27942600D6C950 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				E5A006421F2793F600D6C950 /* TestHelpers.swift */,
+			);
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +309,7 @@
 			files = (
 				E596FE501F2775CF000675EC /* ViewController.swift in Sources */,
 				E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */,
+				E596FE861F278DCE000675EC /* NETJSONRequester.swift in Sources */,
 				E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */,
 				E596FE791F2779FF000675EC /* NETResult.swift in Sources */,
 				E596FE841F2785A2000675EC /* NETError.swift in Sources */,
@@ -300,8 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
+				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
+				E5A006431F2793F600D6C950 /* TestHelpers.swift in Sources */,
 				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
 				E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */,
+				E5A006411F27918D00D6C950 /* NETStubRequester.swift in Sources */,
 				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +497,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = EUPRJDEKWL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MatFM/ThirdParty",
+				);
 				INFOPLIST_FILE = MatFMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.easyfutureltd.MatFMTests;
@@ -486,6 +516,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = EUPRJDEKWL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MatFM/ThirdParty",
+				);
 				INFOPLIST_FILE = MatFMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.easyfutureltd.MatFMTests;
