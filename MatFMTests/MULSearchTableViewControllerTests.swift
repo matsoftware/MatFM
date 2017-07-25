@@ -50,8 +50,13 @@ class MULSearchTableViewControllerTests: XCTestCase {
         XCTAssertEqual(stubPresenter.elementIndexPath,IndexPath(row: 3, section: 4))
         XCTAssertEqual(cell.textLabel?.text, "mockTitle")
         XCTAssertEqual(cell.detailTextLabel?.text, "mockSubtitle")
-//        XCTAssertEqual(cell.imageView?.image, stubPresenter.mockImage)
         
+    }
+    
+    func test_tableViewHeightForRowAtIndexPath_shouldReturnExpectedValue() {
+        
+        XCTAssertEqual(searchTableVieWController.tableView(UITableView(), heightForRowAt: IndexPath(item: 1, section: 0)), 60)
+                
     }
     
     func test_searchBarSearchButtonClicked_shouldCallPresenterSearchRequestedMethodWithTerm() {

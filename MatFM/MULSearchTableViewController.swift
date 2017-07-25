@@ -14,6 +14,9 @@ import PKHUD
 final class MULSearchTableViewController: UITableViewController {
     
     var presenter: MULSearchTablePresenterProtocol!
+    var imageRequester: NETImageRequesting!
+    
+    let defaultRowHeight = 60
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return presenter.numberOfSections
@@ -36,6 +39,10 @@ final class MULSearchTableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(defaultRowHeight)
+    }
+    
 }
 
 //MARK: MULSearchTableViewProtocol
@@ -47,9 +54,12 @@ extension MULSearchTableViewController: MULSearchTableViewProtocol {
     }
 
     func showHud(style: MULSearchTableViewHudStyle) {
+        
+        HUD.hide()
+
         switch style {
         case .error:
-            HUD.flash(.error, delay: 1.0)
+            HUD.flash(.error)
         case .progress:
             HUD.show(.progress)
         case .success:
