@@ -8,7 +8,14 @@
 
 import Foundation
 
-class UTLMainQueueDispatcher: UTLMainQueueDispatching {
+protocol UTLMainQueueDispatching {
+    
+    func async(block: @escaping (() -> Void))
+    
+}
+
+/// Wrapper around the DispatchQueue to perform async operations
+final class UTLMainQueueDispatcher: UTLMainQueueDispatching {
     
     func async(block: @escaping (() -> Void)) {
         DispatchQueue.main.async {
