@@ -11,6 +11,8 @@
 		E517DE101F27C38900D46866 /* MULSearchTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517DE0F1F27C38900D46866 /* MULSearchTableViewProtocol.swift */; };
 		E529FA841F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA831F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift */; };
 		E529FA891F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */; };
+		E529FA8B1F27CF280066343C /* MULSearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */; };
+		E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */; };
 		E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE4D1F2775CF000675EC /* AppDelegate.swift */; };
 		E596FE531F2775CF000675EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E596FE511F2775CF000675EC /* Main.storyboard */; };
 		E596FE551F2775CF000675EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E596FE541F2775CF000675EC /* Assets.xcassets */; };
@@ -76,6 +78,8 @@
 		E517DE0F1F27C38900D46866 /* MULSearchTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewProtocol.swift; sourceTree = "<group>"; };
 		E529FA831F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerFactory.swift; sourceTree = "<group>"; };
 		E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerFactoryTests.swift; sourceTree = "<group>"; };
+		E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerTests.swift; sourceTree = "<group>"; };
+		E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULStubSearchTablePresenter.swift; sourceTree = "<group>"; };
 		E596FE4A1F2775CF000675EC /* MatFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E596FE4D1F2775CF000675EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E596FE521F2775CF000675EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		E596FE741F2778AA000675EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */,
 				E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */,
 				E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */,
 				E5A006511F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift */,
@@ -239,6 +244,7 @@
 		E596FE751F2778B2000675EC /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */,
 				E5A006531F27A3ED00D6C950 /* NETStubJSONRequester.swift */,
 				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
 				E5A006401F27918D00D6C950 /* NETStubRequester.swift */,
@@ -423,7 +429,9 @@
 				E5A006541F27A3ED00D6C950 /* NETStubJSONRequester.swift in Sources */,
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
+				E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */,
 				E5A006431F2793F600D6C950 /* TestHelpers.swift in Sources */,
+				E529FA8B1F27CF280066343C /* MULSearchTableViewControllerTests.swift in Sources */,
 				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
 				E5A0064B1F27995900D6C950 /* NETImageRequesterTests.swift in Sources */,
 				E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */,
