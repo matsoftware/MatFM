@@ -1,2 +1,3 @@
 github "SwiftyJSON/SwiftyJSON"
 github "pkluz/PKHUD" ~> 4.0
+github "rs/SDWebImage"

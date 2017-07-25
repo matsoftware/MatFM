@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import SDWebImage
 
 /// The main view controller used to search for tracks. It's a passive component that
 /// passes the events to the presenter that will update the view ehen needed.
@@ -34,6 +35,9 @@ final class MULSearchTableViewController: UITableViewController {
         
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = subtitle
+        
+        cell.imageView?.sd_setImage(with: URL(string: thumbnail),
+                                    placeholderImage: UIImage(named: "default-placeholder"))
         
         return cell
         
