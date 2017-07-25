@@ -15,6 +15,12 @@
 		E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE701F27771E000675EC /* UTLMainQueueDispatcher.swift */; };
 		E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */; };
 		E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */; };
+		E596FE791F2779FF000675EC /* NETResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE781F2779FF000675EC /* NETResult.swift */; };
+		E596FE7C1F277AE7000675EC /* NETRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE7B1F277AE7000675EC /* NETRequester.swift */; };
+		E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE7D1F277D82000675EC /* NETRequesterTests.swift */; };
+		E596FE801F277F7F000675EC /* NETURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */; };
+		E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE811F27800D000675EC /* NETStubURLSession.swift */; };
+		E596FE841F2785A2000675EC /* NETError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE831F2785A2000675EC /* NETError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,12 @@
 		E596FE701F27771E000675EC /* UTLMainQueueDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLMainQueueDispatcher.swift; sourceTree = "<group>"; };
 		E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLMainQueueDispatcherTests.swift; sourceTree = "<group>"; };
 		E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLStubMainQueueDispatcher.swift; sourceTree = "<group>"; };
+		E596FE781F2779FF000675EC /* NETResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETResult.swift; sourceTree = "<group>"; };
+		E596FE7B1F277AE7000675EC /* NETRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETRequester.swift; sourceTree = "<group>"; };
+		E596FE7D1F277D82000675EC /* NETRequesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETRequesterTests.swift; sourceTree = "<group>"; };
+		E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETURLSessionProtocol.swift; sourceTree = "<group>"; };
+		E596FE811F27800D000675EC /* NETStubURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubURLSession.swift; sourceTree = "<group>"; };
+		E596FE831F2785A2000675EC /* NETError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 				E596FE541F2775CF000675EC /* Assets.xcassets */,
 				E596FE561F2775CF000675EC /* LaunchScreen.storyboard */,
 				E596FE591F2775CF000675EC /* Info.plist */,
+				E596FE7A1F277A03000675EC /* Networking */,
 				E596FE6F1F277685000675EC /* Utility */,
 			);
 			path = MatFM;
@@ -113,6 +126,7 @@
 		E596FE741F2778AA000675EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E596FE7D1F277D82000675EC /* NETRequesterTests.swift */,
 				E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */,
 			);
 			name = Tests;
@@ -121,9 +135,21 @@
 		E596FE751F2778B2000675EC /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
 				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
 			);
 			name = Stubs;
+			sourceTree = "<group>";
+		};
+		E596FE7A1F277A03000675EC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E596FE831F2785A2000675EC /* NETError.swift */,
+				E596FE781F2779FF000675EC /* NETResult.swift */,
+				E596FE7B1F277AE7000675EC /* NETRequester.swift */,
+				E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +260,10 @@
 				E596FE501F2775CF000675EC /* ViewController.swift in Sources */,
 				E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */,
 				E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */,
+				E596FE791F2779FF000675EC /* NETResult.swift in Sources */,
+				E596FE841F2785A2000675EC /* NETError.swift in Sources */,
+				E596FE801F277F7F000675EC /* NETURLSessionProtocol.swift in Sources */,
+				E596FE7C1F277AE7000675EC /* NETRequester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
+				E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */,
 				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
