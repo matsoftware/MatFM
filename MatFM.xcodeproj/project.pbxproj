@@ -12,7 +12,10 @@
 		E596FE531F2775CF000675EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E596FE511F2775CF000675EC /* Main.storyboard */; };
 		E596FE551F2775CF000675EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E596FE541F2775CF000675EC /* Assets.xcassets */; };
 		E596FE581F2775CF000675EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E596FE561F2775CF000675EC /* LaunchScreen.storyboard */; };
-		E596FE631F2775CF000675EC /* MatFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE621F2775CF000675EC /* MatFMTests.swift */; };
+		E596FE6E1F277680000675EC /* UTLMainQueueDispatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE6D1F277680000675EC /* UTLMainQueueDispatching.swift */; };
+		E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE701F27771E000675EC /* UTLMainQueueDispatcher.swift */; };
+		E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */; };
+		E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +37,11 @@
 		E596FE571F2775CF000675EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E596FE591F2775CF000675EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E596FE5E1F2775CF000675EC /* MatFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E596FE621F2775CF000675EC /* MatFMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatFMTests.swift; sourceTree = "<group>"; };
 		E596FE641F2775CF000675EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E596FE6D1F277680000675EC /* UTLMainQueueDispatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLMainQueueDispatching.swift; sourceTree = "<group>"; };
+		E596FE701F27771E000675EC /* UTLMainQueueDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLMainQueueDispatcher.swift; sourceTree = "<group>"; };
+		E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLMainQueueDispatcherTests.swift; sourceTree = "<group>"; };
+		E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTLStubMainQueueDispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 				E596FE541F2775CF000675EC /* Assets.xcassets */,
 				E596FE561F2775CF000675EC /* LaunchScreen.storyboard */,
 				E596FE591F2775CF000675EC /* Info.plist */,
+				E596FE6F1F277685000675EC /* Utility */,
 			);
 			path = MatFM;
 			sourceTree = "<group>";
@@ -90,10 +97,36 @@
 		E596FE611F2775CF000675EC /* MatFMTests */ = {
 			isa = PBXGroup;
 			children = (
-				E596FE621F2775CF000675EC /* MatFMTests.swift */,
+				E596FE751F2778B2000675EC /* Stubs */,
+				E596FE741F2778AA000675EC /* Tests */,
 				E596FE641F2775CF000675EC /* Info.plist */,
 			);
 			path = MatFMTests;
+			sourceTree = "<group>";
+		};
+		E596FE6F1F277685000675EC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E596FE6D1F277680000675EC /* UTLMainQueueDispatching.swift */,
+				E596FE701F27771E000675EC /* UTLMainQueueDispatcher.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		E596FE741F2778AA000675EC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		E596FE751F2778B2000675EC /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
+			);
+			name = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E596FE501F2775CF000675EC /* ViewController.swift in Sources */,
+				E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */,
 				E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */,
+				E596FE6E1F277680000675EC /* UTLMainQueueDispatching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +245,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E596FE631F2775CF000675EC /* MatFMTests.swift in Sources */,
+				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
+				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
