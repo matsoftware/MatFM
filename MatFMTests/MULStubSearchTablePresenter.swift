@@ -18,7 +18,7 @@ class MULStubSearchTablePresenter: MULSearchTablePresenterProtocol {
     var mockNumberOfRows = 20
     var mockTitle: String = "mockTitle"
     var mockSubTitle: String = "mockSubtitle"
-    var mockImage: UIImage = UIImage(data: imageData)!
+    var mockImage: String = "mockImageURL"
     
     func searchRequested(searchTerm: String) {
         searchRequestedTerm = searchTerm
@@ -32,9 +32,9 @@ class MULStubSearchTablePresenter: MULSearchTablePresenterProtocol {
         return mockNumberOfRows
     }
     
-    func elementAtIndexPath(indexPath: IndexPath, completion: @escaping (_ title: String, _ subtitle: String, _ image: UIImage) -> Void) {
+    func elementAtIndexPath(indexPath: IndexPath) -> (title: String, subtitle: String, thumbnail: String)? {
         elementIndexPath = indexPath
-        completion(mockTitle, mockSubTitle, mockImage)
+        return (mockTitle, mockSubTitle, mockImage)
     }
     
 }

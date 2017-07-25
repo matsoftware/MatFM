@@ -12,7 +12,7 @@ final class MULSearchTableViewControllerFactory {
     
     func makeSearchTableViewController() -> UIViewController {
         
-        let presenter = MULSearchTablePresenter()
+        let presenter = MULSearchTablePresenter(musicQueryService: MUSLastFMTracksQueryService())
         let viewController = storyboard.instantiateViewController(withIdentifier: "MULSearchTableViewController") as! MULSearchTableViewController
         presenter.view = viewController
         viewController.presenter = presenter

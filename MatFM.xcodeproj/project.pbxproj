@@ -13,6 +13,10 @@
 		E529FA891F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */; };
 		E529FA8B1F27CF280066343C /* MULSearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */; };
 		E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */; };
+		E529FA8F1F27D8BB0066343C /* MULSearchTablePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8E1F27D8BB0066343C /* MULSearchTablePresenterTests.swift */; };
+		E529FA961F27E3230066343C /* MUSStubTracksQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA951F27E3230066343C /* MUSStubTracksQueryService.swift */; };
+		E529FA981F27E6DA0066343C /* MULStubSearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA971F27E6DA0066343C /* MULStubSearchTableView.swift */; };
+		E529FA9A1F27E8880066343C /* NETStubImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA991F27E8880066343C /* NETStubImageRequester.swift */; };
 		E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE4D1F2775CF000675EC /* AppDelegate.swift */; };
 		E596FE531F2775CF000675EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E596FE511F2775CF000675EC /* Main.storyboard */; };
 		E596FE551F2775CF000675EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E596FE541F2775CF000675EC /* Assets.xcassets */; };
@@ -80,6 +84,10 @@
 		E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerFactoryTests.swift; sourceTree = "<group>"; };
 		E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULStubSearchTablePresenter.swift; sourceTree = "<group>"; };
+		E529FA8E1F27D8BB0066343C /* MULSearchTablePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTablePresenterTests.swift; sourceTree = "<group>"; };
+		E529FA951F27E3230066343C /* MUSStubTracksQueryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSStubTracksQueryService.swift; sourceTree = "<group>"; };
+		E529FA971F27E6DA0066343C /* MULStubSearchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULStubSearchTableView.swift; sourceTree = "<group>"; };
+		E529FA991F27E8880066343C /* NETStubImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubImageRequester.swift; sourceTree = "<group>"; };
 		E596FE4A1F2775CF000675EC /* MatFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E596FE4D1F2775CF000675EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E596FE521F2775CF000675EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 		E596FE741F2778AA000675EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E529FA8E1F27D8BB0066343C /* MULSearchTablePresenterTests.swift */,
 				E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */,
 				E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */,
 				E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */,
@@ -244,8 +253,11 @@
 		E596FE751F2778B2000675EC /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				E529FA971F27E6DA0066343C /* MULStubSearchTableView.swift */,
 				E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */,
+				E529FA951F27E3230066343C /* MUSStubTracksQueryService.swift */,
 				E5A006531F27A3ED00D6C950 /* NETStubJSONRequester.swift */,
+				E529FA991F27E8880066343C /* NETStubImageRequester.swift */,
 				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
 				E5A006401F27918D00D6C950 /* NETStubRequester.swift */,
 				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
@@ -430,12 +442,16 @@
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
 				E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */,
+				E529FA981F27E6DA0066343C /* MULStubSearchTableView.swift in Sources */,
+				E529FA9A1F27E8880066343C /* NETStubImageRequester.swift in Sources */,
 				E5A006431F2793F600D6C950 /* TestHelpers.swift in Sources */,
 				E529FA8B1F27CF280066343C /* MULSearchTableViewControllerTests.swift in Sources */,
 				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
 				E5A0064B1F27995900D6C950 /* NETImageRequesterTests.swift in Sources */,
+				E529FA8F1F27D8BB0066343C /* MULSearchTablePresenterTests.swift in Sources */,
 				E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */,
 				E5A006521F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift in Sources */,
+				E529FA961F27E3230066343C /* MUSStubTracksQueryService.swift in Sources */,
 				E5A006411F27918D00D6C950 /* NETStubRequester.swift in Sources */,
 				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
 				E529FA891F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift in Sources */,

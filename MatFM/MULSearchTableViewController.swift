@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 /// The main view controller used to search for tracks. It's a passive component that
 /// passes the events to the presenter that will update the view ehen needed.
@@ -26,11 +27,10 @@ final class MULSearchTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath)
         
-        presenter.elementAtIndexPath(indexPath: indexPath) { (title, subtitle, thumbNail) in
-            cell.textLabel?.text = title
-            cell.detailTextLabel?.text = subtitle
-            cell.imageView?.image = thumbNail
-        }
+        let (title, subtitle, thumbnail) = (presenter.elementAtIndexPath(indexPath: indexPath)) ?? ("","","")
+        
+        cell.textLabel?.text = title
+        cell.detailTextLabel?.text = subtitle
         
         return cell
         
@@ -43,11 +43,18 @@ final class MULSearchTableViewController: UITableViewController {
 extension MULSearchTableViewController: MULSearchTableViewProtocol {
     
     func refreshList() {
-        
+        tableView.reloadData()
     }
 
     func showHud(style: MULSearchTableViewHudStyle) {
-        
+        switch style {
+        case .error:
+            HUD.flash(.error, delay: 1.0)
+        case .progress:
+            HUD.show(.progress)
+        case .success:
+            HUD.flash(.success, delay: 1.0)
+        }
     }
     
 }
@@ -56,9 +63,9 @@ extension MULSearchTableViewController: MULSearchTableViewProtocol {
 
 extension MULSearchTableViewController: UISearchBarDelegate {
 
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        presenter.searchRequested(searchTerm: searchBar.text ?? "")
     }
-    
     
 }
