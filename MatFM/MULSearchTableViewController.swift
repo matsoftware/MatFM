@@ -15,7 +15,6 @@ import SDWebImage
 final class MULSearchTableViewController: UITableViewController {
     
     var presenter: MULSearchTablePresenterProtocol!
-    var imageRequester: NETImageRequesting!
     
     let defaultRowHeight = 60
     
