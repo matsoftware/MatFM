@@ -10,14 +10,30 @@ import UIKit
 
 final class MULSearchTableViewControllerFactory {
     
-    func makeSearchTableViewController() -> UIViewController {
+    weak var router: MULSearchTableRouterProtocol?
+    
+    init(router: MULSearchTableRouterProtocol?) {
+        self.router = router
+    }
+    
+    func makeSearchTableViewController() -> UINavigationController {
         
-        let presenter = MULSearchTablePresenter(musicQueryService: MUSLastFMTracksQueryService())
+        let presenter = MULSearchTablePresenter(musicQueryService: MUSLastFMTracksQueryService(), router: router!)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MULSearchTableViewController") as! MULSearchTableViewController
         presenter.view = viewController
         viewController.presenter = presenter
         
         return UINavigationController(rootViewController: viewController)
+        
+    }
+    
+    func makeDetailViewController(track: MUSTrack) -> MULSearchDetailViewController {
+        
+        let presenter = MULSearchDetailPresenter(selectedTrack: track)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MULSearchDetailViewController") as! MULSearchDetailViewController
+        viewController.presenter = presenter
+        
+        return viewController
         
     }
     

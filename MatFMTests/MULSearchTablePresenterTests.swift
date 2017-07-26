@@ -14,19 +14,22 @@ class MULSearchTablePresenterTests: XCTestCase {
     
     var stubMusicService: MUSStubTracksQueryService!
     var stubView: MULStubSearchTableView!
+    var stubRouter: MULStubSearchTableRouter!
     var presenter: MULSearchTablePresenter!
     
     override func setUp() {
         super.setUp()
         stubMusicService = MUSStubTracksQueryService()
         stubView = MULStubSearchTableView()
-        presenter = MULSearchTablePresenter(musicQueryService: stubMusicService)
+        stubRouter = MULStubSearchTableRouter()
+        presenter = MULSearchTablePresenter(musicQueryService: stubMusicService, router: stubRouter)
         presenter.view = stubView
     }
     
     override func tearDown() {
         presenter = nil
         stubMusicService = nil
+        stubRouter = nil
         stubView = nil
         super.tearDown()
     }
@@ -119,6 +122,17 @@ class MULSearchTablePresenterTests: XCTestCase {
         XCTAssertEqual(returnedTitle, "Goldfrapp")
         XCTAssertEqual(returnedSubtitle, "Believer")
         XCTAssertEqual(returnedImageURL, "https://lastfm-img2.akamaized.net/i/u/64s/127fdb21d68ea5644f0f98e5c0cc1635.png")
+        
+    }
+    
+    func test_elementSelected_validIndexPath_shouldPushRightDetailViewController() {
+        
+        stubMusicService.mockResult = NETResult.success(exampleTracks)
+        presenter.searchRequested(searchTerm: "Term")
+
+        presenter.elementSelected(indexPath: IndexPath(row: 0, section: 0))
+        
+        XCTAssertEqual(stubRouter.presentDetailSearchViewControllerCalledWithTrack!, exampleTracks.first!)
         
     }
     

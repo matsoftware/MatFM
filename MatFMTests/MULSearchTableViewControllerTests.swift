@@ -53,6 +53,15 @@ class MULSearchTableViewControllerTests: XCTestCase {
         
     }
     
+    func test_didSelectRow_shouldCallPresenterElementSelected() {
+        
+        let indexPath = IndexPath(row: 3, section: 0)
+        searchTableVieWController.tableView(MockUITableView(), didSelectRowAt: indexPath)
+        
+        XCTAssertEqual(stubPresenter.elementSelectedIndexPath, indexPath)
+        
+    }
+    
     func test_tableViewHeightForRowAtIndexPath_shouldReturnExpectedValue() {
         
         XCTAssertEqual(searchTableVieWController.tableView(UITableView(), heightForRowAt: IndexPath(item: 1, section: 0)), 60)

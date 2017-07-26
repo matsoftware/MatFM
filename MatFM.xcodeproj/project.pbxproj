@@ -10,7 +10,6 @@
 		E517DE0D1F27C32600D46866 /* MULSearchTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517DE0C1F27C32600D46866 /* MULSearchTablePresenter.swift */; };
 		E517DE101F27C38900D46866 /* MULSearchTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517DE0F1F27C38900D46866 /* MULSearchTableViewProtocol.swift */; };
 		E529FA841F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA831F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift */; };
-		E529FA891F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */; };
 		E529FA8B1F27CF280066343C /* MULSearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */; };
 		E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */; };
 		E529FA8F1F27D8BB0066343C /* MULSearchTablePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA8E1F27D8BB0066343C /* MULSearchTablePresenterTests.swift */; };
@@ -19,6 +18,12 @@
 		E529FA9A1F27E8880066343C /* NETStubImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA991F27E8880066343C /* NETStubImageRequester.swift */; };
 		E529FA9C1F2806300066343C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E529FA9B1F2806300066343C /* SDWebImage.framework */; };
 		E529FA9D1F2806380066343C /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E529FA9B1F2806300066343C /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E529FA9F1F2808520066343C /* MULSearchTableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FA9E1F2808520066343C /* MULSearchTableRouter.swift */; };
+		E529FAA11F280A000066343C /* MULSearchDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FAA01F280A000066343C /* MULSearchDetailPresenter.swift */; };
+		E529FAA31F280B330066343C /* MULSearchDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FAA21F280B330066343C /* MULSearchDetailPresenterTests.swift */; };
+		E529FAA71F280D8C0066343C /* MULSearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FAA61F280D8C0066343C /* MULSearchDetailViewController.swift */; };
+		E529FAA91F280F5F0066343C /* MULSearchDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FAA81F280F5F0066343C /* MULSearchDetailViewControllerTests.swift */; };
+		E529FAAB1F2812140066343C /* MULStubSearchTableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529FAAA1F2812140066343C /* MULStubSearchTableRouter.swift */; };
 		E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596FE4D1F2775CF000675EC /* AppDelegate.swift */; };
 		E596FE531F2775CF000675EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E596FE511F2775CF000675EC /* Main.storyboard */; };
 		E596FE551F2775CF000675EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E596FE541F2775CF000675EC /* Assets.xcassets */; };
@@ -84,7 +89,6 @@
 		E517DE0C1F27C32600D46866 /* MULSearchTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTablePresenter.swift; sourceTree = "<group>"; };
 		E517DE0F1F27C38900D46866 /* MULSearchTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewProtocol.swift; sourceTree = "<group>"; };
 		E529FA831F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerFactory.swift; sourceTree = "<group>"; };
-		E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerFactoryTests.swift; sourceTree = "<group>"; };
 		E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULStubSearchTablePresenter.swift; sourceTree = "<group>"; };
 		E529FA8E1F27D8BB0066343C /* MULSearchTablePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTablePresenterTests.swift; sourceTree = "<group>"; };
@@ -92,6 +96,12 @@
 		E529FA971F27E6DA0066343C /* MULStubSearchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULStubSearchTableView.swift; sourceTree = "<group>"; };
 		E529FA991F27E8880066343C /* NETStubImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubImageRequester.swift; sourceTree = "<group>"; };
 		E529FA9B1F2806300066343C /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		E529FA9E1F2808520066343C /* MULSearchTableRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableRouter.swift; sourceTree = "<group>"; };
+		E529FAA01F280A000066343C /* MULSearchDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchDetailPresenter.swift; sourceTree = "<group>"; };
+		E529FAA21F280B330066343C /* MULSearchDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchDetailPresenterTests.swift; sourceTree = "<group>"; };
+		E529FAA61F280D8C0066343C /* MULSearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchDetailViewController.swift; sourceTree = "<group>"; };
+		E529FAA81F280F5F0066343C /* MULSearchDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		E529FAAA1F2812140066343C /* MULStubSearchTableRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULStubSearchTableRouter.swift; sourceTree = "<group>"; };
 		E596FE4A1F2775CF000675EC /* MatFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E596FE4D1F2775CF000675EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E596FE521F2775CF000675EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +175,7 @@
 			children = (
 				E517DE0F1F27C38900D46866 /* MULSearchTableViewProtocol.swift */,
 				E5A006601F27C00100D6C950 /* MULSearchTableViewController.swift */,
+				E529FAA61F280D8C0066343C /* MULSearchDetailViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				E517DE0C1F27C32600D46866 /* MULSearchTablePresenter.swift */,
+				E529FAA01F280A000066343C /* MULSearchDetailPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -181,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				E529FA831F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift */,
+				E529FA9E1F2808520066343C /* MULSearchTableRouter.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -242,9 +255,10 @@
 		E596FE741F2778AA000675EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E529FAA81F280F5F0066343C /* MULSearchDetailViewControllerTests.swift */,
+				E529FAA21F280B330066343C /* MULSearchDetailPresenterTests.swift */,
 				E529FA8E1F27D8BB0066343C /* MULSearchTablePresenterTests.swift */,
 				E529FA8A1F27CF280066343C /* MULSearchTableViewControllerTests.swift */,
-				E529FA881F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift */,
 				E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */,
 				E5A006511F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift */,
 				E596FE7D1F277D82000675EC /* NETRequesterTests.swift */,
@@ -258,6 +272,7 @@
 		E596FE751F2778B2000675EC /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				E529FAAA1F2812140066343C /* MULStubSearchTableRouter.swift */,
 				E529FA971F27E6DA0066343C /* MULStubSearchTableView.swift */,
 				E529FA8C1F27CF6F0066343C /* MULStubSearchTablePresenter.swift */,
 				E529FA951F27E3230066343C /* MUSStubTracksQueryService.swift */,
@@ -426,6 +441,7 @@
 				E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */,
 				E5A006581F27AA6F00D6C950 /* MUSQueryServiceProviders.swift in Sources */,
 				E596FE791F2779FF000675EC /* NETResult.swift in Sources */,
+				E529FAA11F280A000066343C /* MULSearchDetailPresenter.swift in Sources */,
 				E596FE841F2785A2000675EC /* NETError.swift in Sources */,
 				E529FA841F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift in Sources */,
 				E517DE101F27C38900D46866 /* MULSearchTableViewProtocol.swift in Sources */,
@@ -434,8 +450,10 @@
 				E596FE7C1F277AE7000675EC /* NETRequester.swift in Sources */,
 				E517DE0D1F27C32600D46866 /* MULSearchTablePresenter.swift in Sources */,
 				E5A006491F27990400D6C950 /* NETImageRequester.swift in Sources */,
+				E529FAA71F280D8C0066343C /* MULSearchDetailViewController.swift in Sources */,
 				E5A006611F27C00100D6C950 /* MULSearchTableViewController.swift in Sources */,
 				E5A006561F27A5EB00D6C950 /* MUSTrack.swift in Sources */,
+				E529FA9F1F2808520066343C /* MULSearchTableRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,10 +465,13 @@
 				E5A006541F27A3ED00D6C950 /* NETStubJSONRequester.swift in Sources */,
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
+				E529FAA31F280B330066343C /* MULSearchDetailPresenterTests.swift in Sources */,
 				E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */,
 				E529FA981F27E6DA0066343C /* MULStubSearchTableView.swift in Sources */,
 				E529FA9A1F27E8880066343C /* NETStubImageRequester.swift in Sources */,
+				E529FAAB1F2812140066343C /* MULStubSearchTableRouter.swift in Sources */,
 				E5A006431F2793F600D6C950 /* TestHelpers.swift in Sources */,
+				E529FAA91F280F5F0066343C /* MULSearchDetailViewControllerTests.swift in Sources */,
 				E529FA8B1F27CF280066343C /* MULSearchTableViewControllerTests.swift in Sources */,
 				E596FE771F277919000675EC /* UTLStubMainQueueDispatcher.swift in Sources */,
 				E5A0064B1F27995900D6C950 /* NETImageRequesterTests.swift in Sources */,
@@ -460,7 +481,6 @@
 				E529FA961F27E3230066343C /* MUSStubTracksQueryService.swift in Sources */,
 				E5A006411F27918D00D6C950 /* NETStubRequester.swift in Sources */,
 				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
-				E529FA891F27CDB00066343C /* MULSearchTableViewControllerFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

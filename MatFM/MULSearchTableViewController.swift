@@ -47,6 +47,10 @@ final class MULSearchTableViewController: UITableViewController {
         return CGFloat(defaultRowHeight)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.elementSelected(indexPath: indexPath)
+    }
+    
 }
 
 //MARK: MULSearchTableViewProtocol
@@ -67,7 +71,7 @@ extension MULSearchTableViewController: MULSearchTableViewProtocol {
         case .progress:
             HUD.show(.progress)
         case .success:
-            HUD.flash(.success, delay: 1.0)
+            HUD.flash(.success)
         }
     }
     

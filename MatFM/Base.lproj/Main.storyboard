@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,6 +62,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHL-AQ-wNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28" y="-87"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="z2r-PM-2Gn">
+            <objects>
+                <viewController storyboardIdentifier="MULSearchDetailViewController" title="Detail" extendedLayoutIncludesOpaqueBars="YES" id="I07-dH-qa0" customClass="MULSearchDetailViewController" customModule="MatFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NrD-UL-BqE"/>
+                        <viewControllerLayoutGuide type="bottom" id="UJ9-2L-eh8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0bu-Q7-dnK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nay-Xe-5aU">
+                                <rect key="frame" x="16" y="25" width="44.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG8-wE-Gi5">
+                                <rect key="frame" x="16" y="69" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys6-Ke-OGO">
+                                <rect key="frame" x="0.0" y="131" width="375" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ys6-Ke-OGO" secondAttribute="trailing" id="C3H-YY-IFv"/>
+                            <constraint firstItem="OG8-wE-Gi5" firstAttribute="top" secondItem="0bu-Q7-dnK" secondAttribute="top" constant="69" id="OZr-cc-EEo"/>
+                            <constraint firstItem="OG8-wE-Gi5" firstAttribute="leading" secondItem="nay-Xe-5aU" secondAttribute="leading" id="VKQ-3w-uS6"/>
+                            <constraint firstItem="Ys6-Ke-OGO" firstAttribute="leading" secondItem="0bu-Q7-dnK" secondAttribute="leading" id="VmV-sr-3UV"/>
+                            <constraint firstItem="Ys6-Ke-OGO" firstAttribute="top" secondItem="OG8-wE-Gi5" secondAttribute="bottom" constant="41" id="ZcY-sV-tta"/>
+                            <constraint firstItem="OG8-wE-Gi5" firstAttribute="top" secondItem="nay-Xe-5aU" secondAttribute="bottom" constant="20" id="hEg-Fv-U8j"/>
+                            <constraint firstItem="OG8-wE-Gi5" firstAttribute="leading" secondItem="0bu-Q7-dnK" secondAttribute="leadingMargin" id="jmr-S5-B60"/>
+                            <constraint firstItem="UJ9-2L-eh8" firstAttribute="top" secondItem="Ys6-Ke-OGO" secondAttribute="bottom" id="mgv-qR-aAG"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="lblSubtitle" destination="OG8-wE-Gi5" id="IDW-Ry-5gT"/>
+                        <outlet property="lblTitle" destination="nay-Xe-5aU" id="bWa-aD-xQf"/>
+                        <outlet property="webView" destination="Ys6-Ke-OGO" id="VSF-zU-avI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgk-9s-Is7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="-88.605697151424295"/>
         </scene>
     </scenes>
 </document>

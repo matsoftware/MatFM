@@ -13,6 +13,7 @@ class MULStubSearchTablePresenter: MULSearchTablePresenterProtocol {
     
     private(set) var searchRequestedTerm: String?
     private(set) var elementIndexPath: IndexPath?
+    private(set) var elementSelectedIndexPath: IndexPath?
     
     var mockNumberOfSections = 10
     var mockNumberOfRows = 20
@@ -35,6 +36,10 @@ class MULStubSearchTablePresenter: MULSearchTablePresenterProtocol {
     func elementAtIndexPath(indexPath: IndexPath) -> (title: String, subtitle: String, thumbnail: String)? {
         elementIndexPath = indexPath
         return (mockTitle, mockSubTitle, mockImage)
+    }
+    
+    func elementSelected(indexPath: IndexPath) {
+        elementSelectedIndexPath = indexPath
     }
     
 }

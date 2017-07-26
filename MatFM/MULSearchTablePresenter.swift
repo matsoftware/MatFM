@@ -18,6 +18,8 @@ protocol MULSearchTablePresenterProtocol {
     
     func elementAtIndexPath(indexPath: IndexPath) -> (title: String, subtitle: String, thumbnail: String)?
     
+    func elementSelected(indexPath: IndexPath)
+    
 }
 
 /// Presenter responsible to update the passive View component
@@ -25,11 +27,14 @@ final class MULSearchTablePresenter: MULSearchTablePresenterProtocol {
     
     weak var view: MULSearchTableViewProtocol!
     private let musicQueryService: MUSTracksQueryServiceProtocol
-    
+    private let router: MULSearchTableRouterProtocol
+
     private var trackList: [MUSTrack] = []
     
-    init(musicQueryService: MUSTracksQueryServiceProtocol) {
+    init(musicQueryService: MUSTracksQueryServiceProtocol,
+        router: MULSearchTableRouterProtocol) {
         self.musicQueryService = musicQueryService
+        self.router = router
     }
     
     func searchRequested(searchTerm: String) {
@@ -72,6 +77,14 @@ final class MULSearchTablePresenter: MULSearchTablePresenterProtocol {
         let thumbNailURL = item.images.filter { $0.size == .medium }.first?.url ?? ""
         
         return (item.artist, item.name, thumbNailURL)
+        
+    }
+    
+    func elementSelected(indexPath: IndexPath) {
+        
+        guard indexPath.row < trackList.count else { return }
+
+        router.presentDetailSearchViewController(track: trackList[indexPath.row])
         
     }
     
