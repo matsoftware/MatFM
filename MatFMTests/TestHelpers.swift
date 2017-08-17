@@ -10,7 +10,7 @@ import UIKit
 @testable import MatFM
 
 var testURL: URL {
-    return URL(string: "https://www.lloydsbank.com/")!
+    return URL(string: "http://www.matsoftware.it/")!
 }
 
 var simpleData: Data {
