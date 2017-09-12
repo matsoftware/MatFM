@@ -57,6 +57,8 @@
 		E5A1419D1F68076D001D6362 /* NETImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1419C1F68076D001D6362 /* NETImageRequester.swift */; };
 		E5A1419F1F680797001D6362 /* NETStubImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1419E1F680797001D6362 /* NETStubImageRequester.swift */; };
 		E5A141A11F6807B6001D6362 /* NETImageRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A141A01F6807B6001D6362 /* NETImageRequesterTests.swift */; };
+		E5B0DFB51F689A6C0099BA3E /* NETRequesterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B0DFB41F689A6C0099BA3E /* NETRequesterFactory.swift */; };
+		E5B0DFB71F689E5E0099BA3E /* NETStubRequesterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B0DFB61F689E5E0099BA3E /* NETStubRequesterFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,8 @@
 		E5A1419C1F68076D001D6362 /* NETImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETImageRequester.swift; sourceTree = "<group>"; };
 		E5A1419E1F680797001D6362 /* NETStubImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubImageRequester.swift; sourceTree = "<group>"; };
 		E5A141A01F6807B6001D6362 /* NETImageRequesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETImageRequesterTests.swift; sourceTree = "<group>"; };
+		E5B0DFB41F689A6C0099BA3E /* NETRequesterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETRequesterFactory.swift; sourceTree = "<group>"; };
+		E5B0DFB61F689E5E0099BA3E /* NETStubRequesterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubRequesterFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +284,7 @@
 				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
 				E5A1419E1F680797001D6362 /* NETStubImageRequester.swift */,
 				E5A006401F27918D00D6C950 /* NETStubRequester.swift */,
+				E5B0DFB61F689E5E0099BA3E /* NETStubRequesterFactory.swift */,
 				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
 			);
 			name = Stubs;
@@ -291,6 +296,7 @@
 				E596FE831F2785A2000675EC /* NETError.swift */,
 				E596FE781F2779FF000675EC /* NETResult.swift */,
 				E596FE7B1F277AE7000675EC /* NETRequester.swift */,
+				E5B0DFB41F689A6C0099BA3E /* NETRequesterFactory.swift */,
 				E596FE851F278DCE000675EC /* NETJSONRequester.swift */,
 				E5A1419C1F68076D001D6362 /* NETImageRequester.swift */,
 				E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */,
@@ -438,6 +444,7 @@
 				E596FE711F27771E000675EC /* UTLMainQueueDispatcher.swift in Sources */,
 				E5A0064D1F27A1A700D6C950 /* MUSTracksQueryServiceProtocol.swift in Sources */,
 				E596FE861F278DCE000675EC /* NETJSONRequester.swift in Sources */,
+				E5B0DFB51F689A6C0099BA3E /* NETRequesterFactory.swift in Sources */,
 				E596FE4E1F2775CF000675EC /* AppDelegate.swift in Sources */,
 				E5A006581F27AA6F00D6C950 /* MUSQueryServiceProviders.swift in Sources */,
 				E596FE791F2779FF000675EC /* NETResult.swift in Sources */,
@@ -466,6 +473,7 @@
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
 				E529FAA31F280B330066343C /* MULSearchDetailPresenterTests.swift in Sources */,
+				E5B0DFB71F689E5E0099BA3E /* NETStubRequesterFactory.swift in Sources */,
 				E5A1419F1F680797001D6362 /* NETStubImageRequester.swift in Sources */,
 				E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */,
 				E529FA981F27E6DA0066343C /* MULStubSearchTableView.swift in Sources */,

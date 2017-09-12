@@ -8,15 +8,14 @@
 
 import Foundation
 
-import UIKit
 @testable import MatFM
 
 class NETStubImageRequester: NETImageRequesting {
     
     private(set) var requestedURL: URL?
-    var mockResult: NETResult<UIImage>?
+    var mockResult: NETResult<NSData>?
     
-    func requestImage(url: URL, completion: ((NETResult<UIImage>) -> Void)?) {
+    func requestImageData(url: URL, completion: ((NETResult<NSData>) -> Void)?) {
         requestedURL = url
         
         if let mockResult = mockResult {

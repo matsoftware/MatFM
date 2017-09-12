@@ -8,62 +8,53 @@
 
 import Foundation
 
-import UIKit
-
 protocol NETImageRequesting {
     
-    func requestImage(url: URL, completion: ((NETResult<UIImage>) -> Void)?)
+    func requestImageData(url: URL, completion: ((NETResult<NSData>) -> Void)?)
     
 }
 
 /// Wrapper around NETRequester to perform URL request with an expected UIImage as response
 final class NETImageRequester: NETImageRequesting {
     
-    private let requester: NETRequesting
+    private let requesterFactory: NETRequesterFactoryProtocol
     
-    private var cache = NSCache<NSString, UIImage>()
+    private var requesters: [String: NETRequesting] = [:]
+    private var cache = NSCache<NSString, NSData>()
+    
     
     convenience init() {
-        self.init(requester: NETRequester())
+        self.init(requesterFactory: NETRequesterFactory())
     }
     
-    init(requester: NETRequesting) {
-        self.requester = requester
+    init(requesterFactory: NETRequesterFactoryProtocol) {
+        self.requesterFactory = requesterFactory
     }
     
-    func requestImage(url: URL, completion: ((NETResult<UIImage>) -> Void)?) {
+    func requestImageData(url: URL, completion: ((NETResult<NSData>) -> Void)?) {
         
-        if let cachedImage = cache.object(forKey: NSString(string: url.absoluteString)) {
-            completion?(NETResult.success(cachedImage))
+        if let cachedImageData = cache.object(forKey: NSString(string: url.absoluteString)) {
+            completion?(NETResult.success(cachedImageData))
             return
         }
+        
+        let requester = requesterFactory.makeRequester()
+        requesters[url.absoluteString] = requester
         
         requester.request(url: url) { [weak self] (result) in
             
             guard let `self` = self else { return }
             
             switch result {
-            case .success(let data):
-                do {
-                    let image = try self.parseImageData(data: data)
-                    self.cache.setObject(image, forKey: NSString(string: url.absoluteString))
-                    completion?(NETResult.success(image))
-                } catch let error {
-                    completion?(NETResult.error(error))
-                }
+            case .success(let imageData as NSData):
+                self.cache.setObject(imageData, forKey: NSString(string: url.absoluteString))
+                completion?(NETResult.success(imageData))
             case .error(let error):
                 completion?(NETResult.error(error))
             }
             
         }
         
-    }
-    
-    private func parseImageData(data: Data) throws -> UIImage {
-        guard let image = UIImage(data: data) else {
-            throw NETError.invalidFormat
-        }
-        return image
     }
     
 }

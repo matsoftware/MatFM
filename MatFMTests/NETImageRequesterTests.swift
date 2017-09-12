@@ -12,17 +12,17 @@ import XCTest
 
 class NETImageRequesterTests: XCTestCase {
     
-    var stubRequester: NETStubRequester!
+    var stubRequesterFactory: NETStubRequesterFactory!
     var imageRequester: NETImageRequester!
     
     override func setUp() {
         super.setUp()
-        stubRequester = NETStubRequester()
-        imageRequester = NETImageRequester(requester: stubRequester)
+        stubRequesterFactory = NETStubRequesterFactory()
+        imageRequester = NETImageRequester(requesterFactory: stubRequesterFactory)
     }
     
     override func tearDown() {
-        stubRequester = nil
+        stubRequesterFactory = nil
         imageRequester = nil
         super.tearDown()
     }
@@ -31,10 +31,10 @@ class NETImageRequesterTests: XCTestCase {
     
     func test_requestImage_requesterReturnsError_shouldReturnRequesterError() {
         
-        stubRequester.mockCompletion = NETResult.error(NETError.invalidResponse)
+        stubRequesterFactory.stubRequester.mockCompletion = NETResult.error(NETError.invalidResponse)
         
         var errorReturned: NETError?
-        imageRequester.requestImage(url: testURL) { (result) in
+        imageRequester.requestImageData(url: testURL) { (result) in
             switch result {
             case .error(let error as NETError):
                 errorReturned = error
@@ -47,39 +47,21 @@ class NETImageRequesterTests: XCTestCase {
         
     }
     
-    func test_requestImage_requesterReturnsInvalidData_shouldReturnNETErrorInvalidFormat() {
+    func test_requestImage_requesterReturnsValidData_shouldReturnExpectedData() {
         
-        stubRequester.mockCompletion = NETResult.success(simpleData)
+        stubRequesterFactory.stubRequester.mockCompletion = NETResult.success(imageData)
         
-        var errorReturned: NETError?
-        imageRequester.requestImage(url: testURL) { (result) in
-            switch result {
-            case .error(let error as NETError):
-                errorReturned = error
-            default:
-                XCTFail()
-            }
-        }
-        
-        XCTAssertEqual(errorReturned, NETError.invalidFormat)
-        
-    }
-    
-    func test_requestImage_requesterReturnsValidData_shouldReturnExpectedUIImage() {
-        
-        stubRequester.mockCompletion = NETResult.success(imageData)
-        
-        var imageReturned: UIImage?
-        imageRequester.requestImage(url: testURL) { (result) in
+        var dataReturned: NSData?
+        imageRequester.requestImageData(url: testURL) { (result) in
             switch result {
             case .success(let image):
-                imageReturned = image
+                dataReturned = image
             case .error(_):
                 XCTFail()
             }
         }
         
-        XCTAssertTrue(NSData(data: UIImagePNGRepresentation(imageReturned!)!).isEqual(NSData(data: imageData)))
+        XCTAssertEqual(dataReturned!, NSData(data: imageData))
         
     }
     
@@ -87,23 +69,23 @@ class NETImageRequesterTests: XCTestCase {
     
     func test_requestImage_imageWasRequestedBefore_shouldReturnCachedData_shouldNotCallRequester() {
         
-        stubRequester.mockCompletion = NETResult.success(imageData)
-        imageRequester.requestImage(url: testURL) { (_) in }
-        stubRequester.mockCompletion = NETResult.error(NETError.invalidResponse)
+        stubRequesterFactory.stubRequester.mockCompletion = NETResult.success(imageData)
+        imageRequester.requestImageData(url: testURL) { (_) in }
+        stubRequesterFactory.stubRequester.mockCompletion = NETResult.error(NETError.invalidResponse)
         
-        imageRequester.requestImage(url: testURL) { (_) in }
+        imageRequester.requestImageData(url: testURL) { (_) in }
 
-        var imageReturned: UIImage?
-        imageRequester.requestImage(url: testURL) { (result) in
+        var dataReturned: NSData?
+        imageRequester.requestImageData(url: testURL) { (result) in
             switch result {
             case .success(let image):
-                imageReturned = image
+                dataReturned = image
             default:
                 XCTFail()
             }
         }
         
-        XCTAssertTrue(NSData(data: UIImagePNGRepresentation(imageReturned!)!).isEqual(NSData(data: imageData)))
+        XCTAssertEqual(dataReturned!, NSData(data: imageData))
         
     }
     
