@@ -54,6 +54,9 @@
 		E5A0065E1F27BF4A00D6C950 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A0065D1F27BF4A00D6C950 /* PKHUD.framework */; };
 		E5A0065F1F27BF5700D6C950 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5A0065D1F27BF4A00D6C950 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E5A006611F27C00100D6C950 /* MULSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A006601F27C00100D6C950 /* MULSearchTableViewController.swift */; };
+		E5A1419D1F68076D001D6362 /* NETImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1419C1F68076D001D6362 /* NETImageRequester.swift */; };
+		E5A1419F1F680797001D6362 /* NETStubImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1419E1F680797001D6362 /* NETStubImageRequester.swift */; };
+		E5A141A11F6807B6001D6362 /* NETImageRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A141A01F6807B6001D6362 /* NETImageRequesterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,9 @@
 		E5A0065B1F27B84200D6C950 /* MUSTrackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSTrackTests.swift; sourceTree = "<group>"; };
 		E5A0065D1F27BF4A00D6C950 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PKHUD.framework; sourceTree = "<group>"; };
 		E5A006601F27C00100D6C950 /* MULSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULSearchTableViewController.swift; sourceTree = "<group>"; };
+		E5A1419C1F68076D001D6362 /* NETImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETImageRequester.swift; sourceTree = "<group>"; };
+		E5A1419E1F680797001D6362 /* NETStubImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETStubImageRequester.swift; sourceTree = "<group>"; };
+		E5A141A01F6807B6001D6362 /* NETImageRequesterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NETImageRequesterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +263,7 @@
 				E5A006511F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift */,
 				E596FE7D1F277D82000675EC /* NETRequesterTests.swift */,
 				E5A0063E1F2790D200D6C950 /* NETJSONRequesterTests.swift */,
+				E5A141A01F6807B6001D6362 /* NETImageRequesterTests.swift */,
 				E596FE721F277736000675EC /* UTLMainQueueDispatcherTests.swift */,
 			);
 			name = Tests;
@@ -271,6 +278,7 @@
 				E529FA951F27E3230066343C /* MUSStubTracksQueryService.swift */,
 				E5A006531F27A3ED00D6C950 /* NETStubJSONRequester.swift */,
 				E596FE811F27800D000675EC /* NETStubURLSession.swift */,
+				E5A1419E1F680797001D6362 /* NETStubImageRequester.swift */,
 				E5A006401F27918D00D6C950 /* NETStubRequester.swift */,
 				E596FE761F277919000675EC /* UTLStubMainQueueDispatcher.swift */,
 			);
@@ -284,6 +292,7 @@
 				E596FE781F2779FF000675EC /* NETResult.swift */,
 				E596FE7B1F277AE7000675EC /* NETRequester.swift */,
 				E596FE851F278DCE000675EC /* NETJSONRequester.swift */,
+				E5A1419C1F68076D001D6362 /* NETImageRequester.swift */,
 				E596FE7F1F277F7F000675EC /* NETURLSessionProtocol.swift */,
 			);
 			name = Networking;
@@ -436,6 +445,7 @@
 				E596FE841F2785A2000675EC /* NETError.swift in Sources */,
 				E529FA841F27CBAA0066343C /* MULSearchTableViewControllerFactory.swift in Sources */,
 				E517DE101F27C38900D46866 /* MULSearchTableViewProtocol.swift in Sources */,
+				E5A1419D1F68076D001D6362 /* NETImageRequester.swift in Sources */,
 				E596FE801F277F7F000675EC /* NETURLSessionProtocol.swift in Sources */,
 				E5A006501F27A2DE00D6C950 /* MUSLastFMTracksQueryService.swift in Sources */,
 				E596FE7C1F277AE7000675EC /* NETRequester.swift in Sources */,
@@ -456,6 +466,7 @@
 				E596FE7E1F277D82000675EC /* NETRequesterTests.swift in Sources */,
 				E5A0063F1F2790D200D6C950 /* NETJSONRequesterTests.swift in Sources */,
 				E529FAA31F280B330066343C /* MULSearchDetailPresenterTests.swift in Sources */,
+				E5A1419F1F680797001D6362 /* NETStubImageRequester.swift in Sources */,
 				E529FA8D1F27CF6F0066343C /* MULStubSearchTablePresenter.swift in Sources */,
 				E529FA981F27E6DA0066343C /* MULStubSearchTableView.swift in Sources */,
 				E529FAAB1F2812140066343C /* MULStubSearchTableRouter.swift in Sources */,
@@ -466,6 +477,7 @@
 				E529FA8F1F27D8BB0066343C /* MULSearchTablePresenterTests.swift in Sources */,
 				E596FE821F27800D000675EC /* NETStubURLSession.swift in Sources */,
 				E5A006521F27A32D00D6C950 /* MUSLastFMTracksQueryServiceTests.swift in Sources */,
+				E5A141A11F6807B6001D6362 /* NETImageRequesterTests.swift in Sources */,
 				E529FA961F27E3230066343C /* MUSStubTracksQueryService.swift in Sources */,
 				E5A006411F27918D00D6C950 /* NETStubRequester.swift in Sources */,
 				E596FE731F277736000675EC /* UTLMainQueueDispatcherTests.swift in Sources */,
