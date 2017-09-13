@@ -15,6 +15,7 @@ class MULSearchTablePresenterTests: XCTestCase {
     var stubMusicService: MUSStubTracksQueryService!
     var stubView: MULStubSearchTableView!
     var stubRouter: MULStubSearchTableRouter!
+    var stubImageService: NETStubImageRequester!
     var presenter: MULSearchTablePresenter!
     
     override func setUp() {
@@ -22,13 +23,15 @@ class MULSearchTablePresenterTests: XCTestCase {
         stubMusicService = MUSStubTracksQueryService()
         stubView = MULStubSearchTableView()
         stubRouter = MULStubSearchTableRouter()
-        presenter = MULSearchTablePresenter(musicQueryService: stubMusicService, router: stubRouter)
+        stubImageService = NETStubImageRequester()
+        presenter = MULSearchTablePresenter(musicQueryService: stubMusicService, imageService: stubImageService, router: stubRouter)
         presenter.view = stubView
     }
     
     override func tearDown() {
         presenter = nil
         stubMusicService = nil
+        stubImageService = nil
         stubRouter = nil
         stubView = nil
         super.tearDown()
@@ -101,11 +104,9 @@ class MULSearchTablePresenterTests: XCTestCase {
         
         stubMusicService.mockResult = NETResult.success(exampleTracks)
         
-        let indexPath = IndexPath(row: 10, section: 0)
-        
         presenter.searchRequested(searchTerm: "Term")
 
-        XCTAssertNil(presenter.elementAtIndexPath(indexPath: indexPath))
+        XCTAssertNil(presenter.elementAtIndex(index: 10))
         
     }
     
@@ -113,11 +114,9 @@ class MULSearchTablePresenterTests: XCTestCase {
         
         stubMusicService.mockResult = NETResult.success(exampleTracks)
 
-        let indexPath = IndexPath(row: 1, section: 0)
-
         presenter.searchRequested(searchTerm: "Term")
 
-        let (returnedTitle, returnedSubtitle, returnedImageURL) = presenter.elementAtIndexPath(indexPath: indexPath)!
+        let (returnedTitle, returnedSubtitle, returnedImageURL) = presenter.elementAtIndex(index: 1)!
         
         XCTAssertEqual(returnedTitle, "Goldfrapp")
         XCTAssertEqual(returnedSubtitle, "Believer")
@@ -130,9 +129,42 @@ class MULSearchTablePresenterTests: XCTestCase {
         stubMusicService.mockResult = NETResult.success(exampleTracks)
         presenter.searchRequested(searchTerm: "Term")
 
-        presenter.elementSelected(indexPath: IndexPath(row: 0, section: 0))
+        presenter.elementSelected(index: 0)
         
         XCTAssertEqual(stubRouter.presentDetailSearchViewControllerCalledWithTrack!, exampleTracks.first!)
+        
+    }
+    
+    func test_imageDataForThumbnailsUrl_wrongUrl_shouldNotRequestImageData() {
+        
+        presenter.imageDataForThumbnailUrl(url: "") { (_) in }
+        
+        XCTAssertNil(stubImageService.requestedURL)
+    }
+    
+    func test_imageDataForThumbnailsUrl_correctUrl_successDataRetrieving_shouldReturnCompletionWithDataFromService() {
+        
+        stubImageService.mockResult = NETResult.success(NSData(data: imageData))
+        
+        var expectedData: Data?
+        presenter.imageDataForThumbnailUrl(url: "http://www.google.co.uk") { (data) in
+            expectedData = data
+        }
+        
+        XCTAssertEqual(expectedData, imageData)
+        
+    }
+    
+    func test_imageDataForThumbnailsUrl_correctUrl_errorInDataRetrieving_shouldReturnCompletionWithNilData() {
+        
+        stubImageService.mockResult = NETResult.error(NETError.invalidResponse)
+        
+        var expectedData: Data? = imageData
+        presenter.imageDataForThumbnailUrl(url: "http://www.google.co.uk") { (data) in
+            expectedData = data
+        }
+        
+        XCTAssertNil(expectedData)
         
     }
     

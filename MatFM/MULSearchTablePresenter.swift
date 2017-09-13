@@ -6,7 +6,8 @@
 //  Copyright © 2017 Easyfuture LTD. All rights reserved.
 //
 
-import UIKit
+import Foundation
+
 
 protocol MULSearchTablePresenterProtocol {
     
@@ -16,9 +17,11 @@ protocol MULSearchTablePresenterProtocol {
     
     var numberOfRows: Int {get}
     
-    func elementAtIndexPath(indexPath: IndexPath) -> (title: String, subtitle: String, thumbnail: String)?
+    func elementAtIndex(index: Int) -> (title: String, subtitle: String, thumbnail: String)?
     
-    func elementSelected(indexPath: IndexPath)
+    func elementSelected(index: Int)
+    
+    func imageDataForThumbnailUrl(url: String, completion: @escaping ((Data?) -> Void))
     
 }
 
@@ -29,11 +32,15 @@ final class MULSearchTablePresenter: MULSearchTablePresenterProtocol {
     private let musicQueryService: MUSTracksQueryServiceProtocol
     private let router: MULSearchTableRouterProtocol
 
+    private let imageService: NETImageRequesting
+    
     private var trackList: [MUSTrack] = []
     
     init(musicQueryService: MUSTracksQueryServiceProtocol,
+         imageService: NETImageRequesting,
         router: MULSearchTableRouterProtocol) {
         self.musicQueryService = musicQueryService
+        self.imageService = imageService
         self.router = router
     }
     
@@ -68,11 +75,11 @@ final class MULSearchTablePresenter: MULSearchTablePresenterProtocol {
         return trackList.count
     }
     
-    func elementAtIndexPath(indexPath: IndexPath) -> (title: String, subtitle: String, thumbnail: String)? {
+    func elementAtIndex(index: Int) -> (title: String, subtitle: String, thumbnail: String)? {
     
-        guard indexPath.row < trackList.count else { return nil }
+        guard index < trackList.count else { return nil }
         
-        let item = trackList[indexPath.row]
+        let item = trackList[index]
         
         let thumbNailURL = item.images.filter { $0.size == .medium }.first?.url ?? ""
         
@@ -80,12 +87,25 @@ final class MULSearchTablePresenter: MULSearchTablePresenterProtocol {
         
     }
     
-    func elementSelected(indexPath: IndexPath) {
-        
-        guard indexPath.row < trackList.count else { return }
+    func elementSelected(index: Int) {
+    
+        guard index < trackList.count else { return }
 
-        router.presentDetailSearchViewController(track: trackList[indexPath.row])
+        router.presentDetailSearchViewController(track: trackList[index])
         
     }
     
+    func imageDataForThumbnailUrl(url: String, completion: @escaping ((Data?) -> Void)) {
+        
+        guard let url = URL(string: url) else { return }
+        
+        imageService.requestImageData(url: url) { (result) in
+            if case NETResult.success(let data) = result {
+                completion(data as Data)
+            } else {
+                completion(nil)
+            }
+        }
+        
+    }
 }

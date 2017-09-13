@@ -19,7 +19,7 @@ final class NETImageRequester: NETImageRequesting {
     
     private let requesterFactory: NETRequesterFactoryProtocol
     
-    private var requesters: [String: NETRequesting] = [:]
+    private var requesters = [NETRequesting]()
     private var cache = NSCache<NSString, NSData>()
     
     
@@ -39,10 +39,10 @@ final class NETImageRequester: NETImageRequesting {
         }
         
         let requester = requesterFactory.makeRequester()
-        requesters[url.absoluteString] = requester
+        requesters.append(requester)
         
         requester.request(url: url) { [weak self] (result) in
-            
+                    
             guard let `self` = self else { return }
             
             switch result {
@@ -52,7 +52,7 @@ final class NETImageRequester: NETImageRequesting {
             case .error(let error):
                 completion?(NETResult.error(error))
             }
-            
+                        
         }
         
     }

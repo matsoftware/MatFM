@@ -18,7 +18,7 @@ final class MULSearchTableViewControllerFactory {
     
     func makeSearchTableViewController() -> UINavigationController {
         
-        let presenter = MULSearchTablePresenter(musicQueryService: MUSLastFMTracksQueryService(), router: router!)
+        let presenter = MULSearchTablePresenter(musicQueryService: MUSLastFMTracksQueryService(), imageService: NETImageRequester(), router: router!)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MULSearchTableViewController") as! MULSearchTableViewController
         presenter.view = viewController
         viewController.presenter = presenter

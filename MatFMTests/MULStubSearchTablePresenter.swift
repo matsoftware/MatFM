@@ -6,14 +6,16 @@
 //  Copyright © 2017 Easyfuture LTD. All rights reserved.
 //
 
-import UIKit
+import Foundation
 @testable import MatFM
 
 class MULStubSearchTablePresenter: MULSearchTablePresenterProtocol {
     
     private(set) var searchRequestedTerm: String?
-    private(set) var elementIndexPath: IndexPath?
-    private(set) var elementSelectedIndexPath: IndexPath?
+    private(set) var elementIndex: Int?
+    private(set) var elementSelectedIndex: Int?
+    private(set) var imageDataCalledUrl: String?
+    var expectedImageData: Data?
     
     var mockNumberOfSections = 10
     var mockNumberOfRows = 20
@@ -33,13 +35,18 @@ class MULStubSearchTablePresenter: MULSearchTablePresenterProtocol {
         return mockNumberOfRows
     }
     
-    func elementAtIndexPath(indexPath: IndexPath) -> (title: String, subtitle: String, thumbnail: String)? {
-        elementIndexPath = indexPath
+    func elementAtIndex(index: Int) -> (title: String, subtitle: String, thumbnail: String)? {
+        elementIndex = index
         return (mockTitle, mockSubTitle, mockImage)
     }
     
-    func elementSelected(indexPath: IndexPath) {
-        elementSelectedIndexPath = indexPath
+    func imageDataForThumbnailUrl(url: String, completion: @escaping ((Data?) -> Void)) {
+        imageDataCalledUrl = url
+        completion(expectedImageData)
+    }
+    
+    func elementSelected(index: Int) {
+        elementSelectedIndex = index
     }
     
 }

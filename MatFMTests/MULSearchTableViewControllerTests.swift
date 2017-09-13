@@ -19,6 +19,7 @@ class MULSearchTableViewControllerTests: XCTestCase {
         stubPresenter = MULStubSearchTablePresenter()
         searchTableVieWController = MULSearchTableViewController()
         searchTableVieWController.presenter = stubPresenter
+        searchTableVieWController.dispatcher = UTLStubMainQueueDispatcher()
     }
     
     override func tearDown() {
@@ -47,9 +48,20 @@ class MULSearchTableViewControllerTests: XCTestCase {
         
         let cell = searchTableVieWController.tableView(MockUITableView(), cellForRowAt: IndexPath(row: 3, section: 4))
         
-        XCTAssertEqual(stubPresenter.elementIndexPath,IndexPath(row: 3, section: 4))
+        XCTAssertEqual(stubPresenter.elementIndex,3)
         XCTAssertEqual(cell.textLabel?.text, "mockTitle")
         XCTAssertEqual(cell.detailTextLabel?.text, "mockSubtitle")
+        
+    }
+    
+    
+    func test_cellForRowAtIndexPath_requestTheImageThumbnailFromPresenter() {
+        
+        stubPresenter.expectedImageData = imageData
+        
+        _ = searchTableVieWController.tableView(MockUITableView(), cellForRowAt: IndexPath(row: 3, section: 4))
+        
+        XCTAssertEqual(stubPresenter.imageDataCalledUrl,"mockImageURL")
         
     }
     
@@ -58,7 +70,7 @@ class MULSearchTableViewControllerTests: XCTestCase {
         let indexPath = IndexPath(row: 3, section: 0)
         searchTableVieWController.tableView(MockUITableView(), didSelectRowAt: indexPath)
         
-        XCTAssertEqual(stubPresenter.elementSelectedIndexPath, indexPath)
+        XCTAssertEqual(stubPresenter.elementSelectedIndex, 3)
         
     }
     

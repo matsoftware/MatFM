@@ -15,7 +15,8 @@ import SDWebImage
 final class MULSearchTableViewController: UITableViewController {
     
     var presenter: MULSearchTablePresenterProtocol!
-    
+    var dispatcher: UTLMainQueueDispatching = UTLMainQueueDispatcher()
+
     let defaultRowHeight = 60
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,14 +31,22 @@ final class MULSearchTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath)
         
-        let (title, subtitle, thumbnail) = (presenter.elementAtIndexPath(indexPath: indexPath)) ?? ("","","")
+        let (title, subtitle, thumbnail) = (presenter.elementAtIndex(index: indexPath.row)) ?? ("","","")
         
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = subtitle
         
-        cell.imageView?.sd_setImage(with: URL(string: thumbnail),
-                                    placeholderImage: UIImage(named: "default-placeholder"))
+        cell.imageView?.image = UIImage(named: "default-placeholder")
         
+        presenter.imageDataForThumbnailUrl(url: thumbnail) { [unowned self] (data) in
+            guard let data = data else { return }
+            self.dispatcher.async {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    cell.imageView?.image = UIImage(data: data)
+                }
+            }
+        }
+ 
         return cell
         
     }
@@ -47,7 +56,7 @@ final class MULSearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.elementSelected(indexPath: indexPath)
+        presenter.elementSelected(index: indexPath.row)
     }
     
 }
