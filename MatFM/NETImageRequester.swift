@@ -21,7 +21,7 @@ final class NETImageRequester: NETImageRequesting {
     
     private var requesters = [NETRequesting]()
     private var cache = NSCache<NSString, NSData>()
-    
+    private let taskGroup = DispatchGroup()
     
     convenience init() {
         self.init(requesterFactory: NETRequesterFactory())
@@ -40,6 +40,7 @@ final class NETImageRequester: NETImageRequesting {
         
         let requester = requesterFactory.makeRequester()
         requesters.append(requester)
+        taskGroup.enter()
         
         requester.request(url: url) { [weak self] (result) in
                     
@@ -52,7 +53,13 @@ final class NETImageRequester: NETImageRequesting {
             case .error(let error):
                 completion?(NETResult.error(error))
             }
+            
+            self.taskGroup.leave()
                         
+        }
+        
+        taskGroup.notify(queue: DispatchQueue.main) { 
+            self.requesters.removeAll()
         }
         
     }
